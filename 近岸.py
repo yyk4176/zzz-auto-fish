@@ -79,8 +79,8 @@ def mainloop():
         left, top, right, bottom = 2030, 1070, 2240, 1280
         
         # 加载模板图像
-        template = cv2.imread('images/template.png')
-        shou = cv2.imread('images/shou.png')
+        template = cv2.imread('images/yuanhaif.png')
+        shou = cv2.imread('images/yuanshou.png')
         rightshort = cv2.imread('images/rightshort1.png')
         rightlong = cv2.imread('images/rightlong1.png')
         leftshort = cv2.imread('images/leftshort1.png')
@@ -192,6 +192,7 @@ if __name__ == '__main__':
     else:
         print('当前不是管理员权限，以管理员权限启动新进程...')
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+
 
 
 
