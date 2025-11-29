@@ -98,7 +98,7 @@ def mainloop():
             max_val, max_loc = match_template(screenshot1, f1)
             print(f"匹配相似度：{max_val}")
             
-            if max_val > 0.90:  # 设置阈值
+            if max_val > 0.87:  # 设置阈值
                 print("相似度高，点击 F 键")
                 pydirectinput.press('f')  # 模拟按下 F 键
                 f1 = shou if num == 0 else template  # 根据 num 来切换模板
@@ -192,4 +192,5 @@ if __name__ == '__main__':
     else:
         print('当前不是管理员权限，以管理员权限启动新进程...')
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+
 
