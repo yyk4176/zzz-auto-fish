@@ -17,7 +17,7 @@ from pynput import keyboard
 import sys, time, ctypes
 from random import random
 
-INTERVAL = 0.01
+INTERVAL = 0
 EXIT_KEY = keyboard.Key.esc
 SWITCH_KEY = keyboard.KeyCode.from_char("k")
 
@@ -72,7 +72,7 @@ def match_template(screenshot, template):
     return max_val, max_loc
 
 # 优化的快速连点函数
-def rapid_click(key, times, interval_range=(0.06, 0.11)):
+def rapid_click(key, times, interval_range=(0.05, 0.05)):
     """
     优化的连点函数，使用随机间隔时间
     :param key: 要按下的按键
@@ -138,7 +138,7 @@ def mainloop():
                 pydirectinput.press('space')
             elif right_vals['long'] > 0.6:
                 pydirectinput.keyDown('d')
-                time.sleep(1.5)  # 优化长按时间
+                time.sleep(3)  # 优化长按时间
                 pydirectinput.keyUp('d')
                 pydirectinput.press('space')
             elif left_vals['short'] > 0.4:
@@ -146,7 +146,7 @@ def mainloop():
                 pydirectinput.press('space')
             elif left_vals['long'] > 0.4:
                 pydirectinput.keyDown('a')
-                time.sleep(1.5)
+                time.sleep(3)
                 pydirectinput.keyUp('a')
                 pydirectinput.press('space')
 
