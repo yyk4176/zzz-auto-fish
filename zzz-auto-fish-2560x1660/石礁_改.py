@@ -168,18 +168,20 @@ def mainloop(argsQueue):
                 rapid_click('d', 8)  # 使用默认的60-110ms间隔
                 pydirectinput.press('space')
             elif right_vals['long'] > 0.6:
-                pydirectinput.keyDown('d')
-                time.sleep(1.5)  # 优化长按时间
-                pydirectinput.keyUp('d')
                 pydirectinput.press('space')
+                pydirectinput.keyDown('d')
+                time.sleep(3)  # 优化长按时间
+                pydirectinput.keyUp('d')
+                
             elif left_vals['short'] > 0.4:
                 rapid_click('a', 8)  # 使用默认的60-110ms间隔
                 pydirectinput.press('space')
             elif left_vals['long'] > 0.4:
-                pydirectinput.keyDown('a')
-                time.sleep(1.5)
-                pydirectinput.keyUp('a')
                 pydirectinput.press('space')
+                pydirectinput.keyDown('a')
+                time.sleep(3)
+                pydirectinput.keyUp('a')
+                
 
             if window.isActive:
                 pydirectinput.click(x=window.left + 2000, y=window.top + 900)
