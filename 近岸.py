@@ -17,7 +17,7 @@ from pynput import keyboard
 import sys, time, ctypes
 from random import random
 
-INTERVAL = 0.01
+INTERVAL = 0
 EXIT_KEY = keyboard.Key.esc
 SWITCH_KEY = keyboard.KeyCode.from_char("k")
 
@@ -118,7 +118,7 @@ def mainloop():
                 
                 print("右长匹配相似度：长按D键")
                 pydirectinput.keyDown('d')  # 长按 'D' 键
-                time.sleep(1.7)  # 按住的时间
+                time.sleep(2.5)  # 按住的时间
                 pydirectinput.keyUp('d')  # 释放 'D' 键
                 pydirectinput.press('space')
 
@@ -131,7 +131,7 @@ def mainloop():
                 
                 print("左长匹配相似度：长按A键")
                 pydirectinput.keyDown('a')
-                time.sleep(1.7)
+                time.sleep(2.5)
                 pydirectinput.keyUp('a')
                 pydirectinput.press('space')
             if  window.isActive:
@@ -147,7 +147,7 @@ def mainloop():
             save_image(screenshot_pil, "images/screenshot2.png")
             screenshot_pil = Image.fromarray(screenshot3)
             save_image(screenshot_pil, "images/screenshot3.png")
-            time.sleep(0.1)  # 每次迭代稍微睡眠一下，减轻 CPU 压力
+            time.sleep(0)  # 每次迭代稍微睡眠一下，减轻 CPU 压力
 
 def toggle_running(key):
     global running
@@ -192,3 +192,4 @@ if __name__ == '__main__':
     else:
         print('当前不是管理员权限，以管理员权限启动新进程...')
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+
