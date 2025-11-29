@@ -76,7 +76,7 @@ def mainloop():
         window.activate()
         
         # 设置区域
-        left, top, right, bottom = 2030, 1070, 2240, 1280
+        left, top, right, bottom = 2060, 1100, 2210, 1250
         
         # 加载模板图像
         template = cv2.imread('images/yuanhaif.png')
@@ -192,6 +192,7 @@ if __name__ == '__main__':
     else:
         print('当前不是管理员权限，以管理员权限启动新进程...')
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+
 
 
 
